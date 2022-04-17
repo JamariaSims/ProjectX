@@ -1,14 +1,23 @@
 import React from "react";
+import { connect } from "react-redux";
 import Project from "./Project";
 
-export default function Projects(props) {
-  const { projects } = props;
+function Projects(props) {
   return (
     <div>
-      <h1>Projects</h1>
-      {projects.map((this_Project) => {
-        return <Project project={this_Project}></Project>;
-      })}
+      {props.projects.length > 0 ? (
+        props.projects.map((this_Project) => {
+          return <Project project={this_Project}></Project>;
+        })
+      ) : (
+        <h1>No Projects Available</h1>
+      )}
     </div>
   );
 }
+const mapStateToProps = (state) => {
+  return {
+    projects: state.projects,
+  };
+};
+export default connect(mapStateToProps)(Projects);

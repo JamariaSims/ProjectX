@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
-
+import { connect } from "react-redux";
+import { addProject } from "../Actions/ProjectActions";
 const initializeForm = {
   name: "",
   description: "",
   deadline: "",
 };
-export default function ProjectForm(props) {
-  const { projects, setProjects } = props;
+function ProjectForm(props) {
   const [form, setForm] = useState(initializeForm);
+
   const onInputChange = (e) => {
     e.preventDefault();
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   const onSubmitChange = (e) => {
     e.preventDefault();
-    setProjects(projects, form);
-    console.log(form);
+    props.addProject(form);
   };
   const onCancelChange = (e) => {
     e.preventDefault();
@@ -45,6 +45,7 @@ export default function ProjectForm(props) {
           onChange={onInputChange}
           required
         />
+        <br />
         <label>Deadline</label>
         <input
           id="Form_Input-Date"
@@ -71,3 +72,9 @@ export default function ProjectForm(props) {
     </div>
   );
 }
+const mapStateToProps = (state) => {
+  return {
+    projects: state.projects,
+  };
+};
+export default connect(mapStateToProps, { addProject })(ProjectForm);

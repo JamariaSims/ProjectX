@@ -5,9 +5,10 @@ export default function Project(props) {
   return (
     <div>
       <h1>{project.name}</h1>
-      <img alt="Project Name Here" src="//unsplash.it/500/500" />
-      <h1>{project.description}</h1>
-      <h1>{project.deadline}</h1>
+      <img alt="Project Name Here" src="//unsplash.it/500/300" />
+      <p>{project.description}</p>
+      <p>Date Created: {project.deadline}</p>
+      <p>{}</p>
     </div>
   );
 }

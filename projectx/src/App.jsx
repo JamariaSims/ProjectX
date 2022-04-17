@@ -1,19 +1,18 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import ProjectForm from "./Components/ProjectForm";
 import Projects from "./Components/Projects";
+import { connect } from "react-redux";
 
-function App() {
-  const [projects, setProjects] = useState([{}]);
-  useEffect(() => {
-    window.alert("Refresh");
-  }, [projects]);
+function App(props) {
   return (
     <div className="App">
-      <ProjectForm projects={projects} setProjects={setProjects} />
-      <Projects projects={projects} />
+      <ProjectForm />
+      <Projects />
     </div>
   );
 }
-
-export default App;
+const mapStateToProps = (state) => {
+  return state;
+};
+export default connect(mapStateToProps)(App);
