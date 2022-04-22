@@ -1,10 +1,13 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect } from "react";
 import ProjectForm from "./Components/ProjectForm";
 import Projects from "./Components/Projects";
 import { connect } from "react-redux";
 
 function App(props) {
+  useEffect(() => {
+    console.log(props.projects);
+  }, [props.projects]);
   return (
     <div className="App">
       <ProjectForm />
@@ -13,6 +16,8 @@ function App(props) {
   );
 }
 const mapStateToProps = (state) => {
-  return state;
+  return {
+    projects: state.projects,
+  };
 };
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {})(App);

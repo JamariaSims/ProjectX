@@ -8,6 +8,11 @@
   margin: 0% auto;
   border: 1px solid black;
 }
+.Project_Container {
+  border: black solid 1px;
+  width: 50%;
+  margin: 0% auto;
+}
 #Form_Button {
   width: 25%;
   margin: 0% auto;
@@ -32,4 +37,17 @@
   margin-block: 1%;
   border: 1px solid black;
   border-radius: 5rem;
+}
+img {
+  box-sizing: border-box;
+  width: 100%;
+}
+#Project-Description {
+  padding-left: 2%;
+  text-align: left;
+}
+#Project-Description_Title {
+  padding-left: 2%;
+  text-align: left;
+  font-size: 1.5rem;
 }

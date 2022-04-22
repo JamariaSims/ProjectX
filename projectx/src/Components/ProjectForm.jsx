@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import { connect } from "react-redux";
 import { addProject } from "../Actions/ProjectActions";
+import random from "random-key-generator";
 const initializeForm = {
   name: "",
   description: "",
   deadline: "",
+  id: random(5),
 };
 function ProjectForm(props) {
   const [form, setForm] = useState(initializeForm);
@@ -17,6 +19,7 @@ function ProjectForm(props) {
   const onSubmitChange = (e) => {
     e.preventDefault();
     props.addProject(form);
+    setForm(initializeForm);
   };
   const onCancelChange = (e) => {
     e.preventDefault();
@@ -35,8 +38,9 @@ function ProjectForm(props) {
           onChange={onInputChange}
           required
         />
-
         <label>Description</label>
+        <br></br>
+
         <input
           id="Form_Input"
           name="description"
