@@ -1,53 +1,120 @@
 .App {
+  --var_Color0:#FFFFF0;
+  --var_Color1:#8ecae6;
+  --var_Color2:#219ebc;
+  --var_Color3:#023047;
+  --var_Color4:#ffb703;
+  --var_Color5:#fb8500;
+  width: 100%;
+  margin: 0% auto;
   text-align: center;
+  background-color:var(--var_Color0);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  font-size: 14px;
+ 
 }
-.Form_Container {
-  width: 60%;
+.Form_Container{
+  width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0% auto;
-  border: 1px solid black;
+  padding-block: 1%;
+  margin-block: 1%;
 }
-.Project_Container {
-  border: black solid 1px;
-  width: 50%;
+.Project_Container{
+  position: relative;
+  box-sizing: border-box;
+  padding: 1%;
+  background-color: white;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
   margin: 0% auto;
+
 }
-#Form_Button {
-  width: 25%;
-  margin: 0% auto;
+.Main-Navigation{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: var(--var_Color4) solid 2px;
 }
-#Form_Input {
-  font-size: 1.3rem;
-  text-align: left;
+.Project_Container{
+  width: 30vw;
+  padding: 3%;
+  border: var(--var_Color4) solid 1px;
+}
+.Project_Info{
+  margin-left: 1em;
+}
+.Project_Status{
+  display: flex;
+  justify-content: space-evenly;
+}
+.Projects_Container{
   width: 90%;
   margin: 0% auto;
-  padding: 1%;
-  margin-block: 1%;
-  border: 1px solid black;
-  border-radius: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  
 }
-#Form_Input-Date {
-  display: block;
-  font-size: 1rem;
-  padding: 1%;
-  text-align: center;
-  width: 30%;
+#Form_Name{
+  color: var(--var_Color5);
+}
+#Navigation_Name{
+  padding-left: 5%;
+}
+#Navigation_Links{
+  color: var(--var_Color3);
+  font-weight: bold;
+  display: flex;
+  margin-top: 1%;
+  width: 50%;
+  justify-content: space-around;
+}
+#Logo_Name{
+  font-size: 2em;
+  letter-spacing: 0.1em;
+  margin: 0%;
+}
+#Form_Button {
+  width: 10%;
+  margin: 0% auto;
+}
+#Project_Buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-block: 1%;
+  border-top: #ffb703 solid 1px;
+}
+#Form_Input{
+  font-size: 1.3rem;
+  text-align: left;
+  width: 18em;
   margin: 0% auto;
   margin-block: 1%;
-  border: 1px solid black;
-  border-radius: 5rem;
+  border: 1px solid hsl(0, 0, 100);
+}
+#Form_Input-Date {
+  font-size: 1rem;
+  padding: 0.1em;
+  text-align: center;
+  width: 20%;
+  margin: 0% auto;
+  margin-block: 1%;
 }
 img {
   box-sizing: border-box;
-  width: 100%;
 }
-#Project-Description {
-  padding-left: 2%;
+#Project-Description{
   text-align: left;
 }
 #Project-Description_Title {
-  padding-left: 2%;
   text-align: left;
   font-size: 1.5rem;
+}
+#Project_Name{
+  text-align: left;
 }
